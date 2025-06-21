@@ -140,6 +140,6 @@ user1 = User("kaizen@email.com", "123")
 
 print(f"email: {user1.email}\npassword: {user1.password}")
 
-user1.email = "kaizen@iceresente@admin.com"
+user1.email = "kaizeniceresente@admin.com"
 
 user1.password = "1111111"

@@ -58,7 +58,6 @@ print(user1.get_password())
 user1.set_password("@avocado_lover123")
 
 print(user1.get_password())
-"""
 
 from datetime import datetime
 
@@ -100,3 +99,47 @@ print(f"edited user: {user1.get_user()}")
 user1.set_pass("11111111")
 
 print(f"editted password: {user1.get_password()} ")
+"""
+
+from datetime import datetime
+
+
+class User:
+    def __init__(self, email, password):
+        self._email = email
+        self._password = password
+
+    @property
+    def email(self):
+        print(f"email is accessed at {datetime.now()}")
+        return self._email
+
+    @property
+    def password(self):
+        print(f"password is accessed at {datetime.now()}")
+        return self._password
+
+    @email.setter
+    def email(self, new_email):
+        if "@" in new_email:
+            print(f"email edited at {datetime.now()}\nnew email is {new_email}")
+            self._email = new_email
+        else:
+            print("not an email")
+
+    @password.setter
+    def password(self, new_pass):
+        if "admin" in self.email:
+            print(f"password edited at {datetime.now()}\nnew password is {new_pass}")
+            self._password = new_pass
+        else:
+            print("unauthorize")
+
+
+user1 = User("kaizen@email.com", "123")
+
+print(f"email: {user1.email}\npassword: {user1.password}")
+
+user1.email = "kaizen@iceresente@admin.com"
+
+user1.password = "1111111"

@@ -32,7 +32,7 @@ class Person:
 
 person1 = Person("Kaizen Ice", 24)
 person1.greet()
-"""
+
 
 from datetime import datetime
 
@@ -58,3 +58,45 @@ print(user1.get_password())
 user1.set_password("@avocado_lover123")
 
 print(user1.get_password())
+"""
+
+from datetime import datetime
+
+
+class User:
+    def __init__(self, username, email, password):
+        self.username = username
+        self.em = email
+        self.password = password
+
+    def get_user(self):
+        print(f"username is accessed at {datetime.now()}")
+        return self.username
+
+    def set_user(self, new_username):
+        print(f"username is editted at {datetime.now()}")
+        self.username = new_username
+
+    def set_pass(self, new_pass):
+        if "admin" in self.username:
+            print(f"new password is set at {datetime.now()}")
+            self.password = new_pass
+        else:
+            print("not authorize")
+
+    def get_password(self):
+        print(f"password accessed at {datetime.now()}")
+        return self.password
+
+
+user1 = User("kaizen123", "k@example.com", "12345")
+
+print(f" initial user: {user1.get_user()}")
+
+user1.set_user("maryjane123heart.admin")
+
+print(f"edited user: {user1.get_user()}")
+
+user1.set_pass("11111111")
+
+print(f"editted password: {user1.get_password()} ")

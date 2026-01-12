@@ -102,6 +102,7 @@ print(f"editted password: {user1.get_password()} ")
 """
 
 from datetime import datetime
+import time
 
 
 class User:
@@ -140,6 +141,10 @@ user1 = User("kaizen@email.com", "123")
 
 print(f"email: {user1.email}\npassword: {user1.password}")
 
-user1.email = "kaizeniceresente@admin.com"
+for remaining in range(3, 0, -1):
+    print(remaining)
+    time.sleep(1)
 
+user1.email = "kaizeniceresente@admin.com"
 user1.password = "1111111"
+print(f"email : {user1.email} \npassword: {user1.password}")
